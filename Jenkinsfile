@@ -11,7 +11,7 @@ pipeline{
         }
         stage("docker") {
             steps {
-                sh ' systemctl start docker'
+                sh ' sudo systemctl start docker'
                 sh ' docker build  . '
                 echo 'stage: docker'
             }
