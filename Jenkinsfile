@@ -11,7 +11,7 @@ pipeline{
         }
         stage("docker") {
             steps {
-                sh ' docker build -t QNA:${currentBuild.number} . '
+                sh ' docker build  . '
                 echo 'stage: docker'
             }
         }
