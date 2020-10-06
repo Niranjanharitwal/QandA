@@ -6,11 +6,12 @@ pipeline{
      
         stage("Maven") {
             steps {
-                sh ' mvn clean compile '
+                sh ' mvn clean compile package '
             }
         }
         stage("docker") {
             steps {
+                sh ' docker build -t QNA:${currentBuild.number} . '
                 echo 'stage: docker'
             }
         }
