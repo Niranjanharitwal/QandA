@@ -13,8 +13,8 @@ pipeline{
             steps {
                 sh ' sudo systemctl start docker'
                 sh 'sudo chmod 777 /var/run/docker.sock '
-                sh ' docker build  . '
-                echo 'stage: docker'
+                sh ' docker build -t docker.com/nharitwa/qanda:latest . '
+                sh ' docker push docker.com/nharitwa/qanda:latest '
             }
         }
         stage("deployment"){
