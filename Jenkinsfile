@@ -18,8 +18,8 @@ pipeline{
             }
         }
         stage("deployment"){
-            steps {
-                echo 'stage: deploymnet'
+                        steps {
+                sh ' docker run -d docker.io/nharitwa/qanda:latest -v /var/log:/var/log'
             }
         }
     }
